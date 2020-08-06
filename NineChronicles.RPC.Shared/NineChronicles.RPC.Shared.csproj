@@ -13,6 +13,6 @@
   </ItemGroup>
 
   <Target Name="GenerateMagicOnion" AfterTargets="Compile">
-    <MagicOnionGenerator Input=".\Nekoyume.RPC.Shared.csproj" Output="..\Generated\MagicOnion.Generated.cs" />
+    <MagicOnionGenerator Input=".\NineChronicles.RPC.Shared.csproj" Output="..\Generated\MagicOnion.Generated.cs" />
   </Target>
 </Project>
