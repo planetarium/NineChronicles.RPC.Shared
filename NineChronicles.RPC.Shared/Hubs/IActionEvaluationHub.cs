@@ -9,10 +9,12 @@ namespace Nekoyume.Shared.Hubs
 
         Task LeaveAsync();
 
-        Task BroadcastAsync(byte[] encoded);
+        Task BroadcastRenderAsync(byte[] encoded);
+
+        Task BroadcastUnrenderAsync(byte[] encoded);
 
         Task UpdateTipAsync(long index);
 
-        Task ReportReorgAsync(byte[] branchpointHash, byte[] oldTipHash, byte[] newTipHash);
+        Task ReportReorgAsync(byte[] oldTip, byte[] newTip, byte[] branchpoint);
     }
 }

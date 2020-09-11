@@ -3,9 +3,11 @@
     public interface IActionEvaluationHubReceiver
     {
         void OnRender(byte[] evaluation);
+        
+        void OnUnrender(byte[] evaluation);
 
         void OnTipChanged(long index);
 
-        void OnReorged(byte[] branchpointHash, byte[] oldTipHash, byte[] newTipHash);
+        void OnReorged(byte[] oldTip, byte[] newTip, byte[] branchpoint);
     }
 }
