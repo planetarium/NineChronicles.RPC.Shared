@@ -6,6 +6,6 @@
 
         void OnTipChanged(long index);
 
-        void OnReorged(byte[] branchpointHash, byte[] oldTipHash, byte[] newTipHash);
+        void OnReorged(byte[] oldTip, byte[] newTip, byte[] branchpoint);
     }
 }
