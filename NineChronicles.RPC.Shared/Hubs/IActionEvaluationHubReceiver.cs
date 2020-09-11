@@ -3,6 +3,8 @@
     public interface IActionEvaluationHubReceiver
     {
         void OnRender(byte[] evaluation);
+        
+        void OnUnrender(byte[] evaluation);
 
         void OnTipChanged(long index);
 

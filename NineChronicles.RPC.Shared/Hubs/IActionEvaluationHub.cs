@@ -9,7 +9,9 @@ namespace Nekoyume.Shared.Hubs
 
         Task LeaveAsync();
 
-        Task BroadcastAsync(byte[] encoded);
+        Task BroadcastRenderAsync(byte[] encoded);
+
+        Task BroadcastUnrenderAsync(byte[] encoded);
 
         Task UpdateTipAsync(long index);
 
