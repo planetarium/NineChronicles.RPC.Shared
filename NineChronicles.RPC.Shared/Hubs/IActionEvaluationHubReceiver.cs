@@ -9,5 +9,7 @@
         void OnTipChanged(long index);
 
         void OnReorged(byte[] oldTip, byte[] newTip, byte[] branchpoint);
+
+        void OnReorgEnd(byte[] oldTip, byte[] newTip, byte[] branchpoint);
     }
 }
