@@ -18,5 +18,7 @@ namespace Nekoyume.Shared.Hubs
         Task ReportReorgAsync(byte[] oldTip, byte[] newTip, byte[] branchpoint);
         
         Task ReportReorgEndAsync(byte[] oldTip, byte[] newTip, byte[] branchpoint);
+
+        Task ReportExceptionAsync(byte[] encoded);
     }
 }
