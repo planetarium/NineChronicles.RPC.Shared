@@ -11,5 +11,7 @@
         void OnReorged(byte[] oldTip, byte[] newTip, byte[] branchpoint);
 
         void OnReorgEnd(byte[] oldTip, byte[] newTip, byte[] branchpoint);
+
+        void OnException(byte[] encoded);
     }
 }
