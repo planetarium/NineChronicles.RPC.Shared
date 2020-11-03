@@ -6,7 +6,7 @@
         
         void OnUnrender(byte[] evaluation);
 
-        void OnTipChanged(long index);
+        void OnRenderBlock(byte[] oldTip, byte[] newTip);
 
         void OnReorged(byte[] oldTip, byte[] newTip, byte[] branchpoint);
 
