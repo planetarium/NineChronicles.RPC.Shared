@@ -20,5 +20,9 @@ namespace Nekoyume.Shared.Hubs
         Task ReportReorgEndAsync(byte[] oldTip, byte[] newTip, byte[] branchpoint);
 
         Task ReportExceptionAsync(int code, string message);
+
+        Task PreloadStartAsync();
+
+        Task PreloadEndAsync();
     }
 }

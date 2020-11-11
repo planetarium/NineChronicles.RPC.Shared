@@ -13,5 +13,9 @@
         void OnReorgEnd(byte[] oldTip, byte[] newTip, byte[] branchpoint);
 
         void OnException(int code, string message);
+
+        void OnPreloadStart();
+
+        void OnPreloadEnd();
     }
 }
