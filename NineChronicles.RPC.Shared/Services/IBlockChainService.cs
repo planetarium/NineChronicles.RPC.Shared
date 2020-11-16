@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MagicOnion;
 
 namespace Nekoyume.Shared.Services
@@ -11,5 +12,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<byte[]> GetState(byte[] addressBytes);
 
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes);
+
+        UnaryResult<bool> SetAddressesToSubscribe(IEnumerable<byte[]> addressesBytes);
     }
 }
