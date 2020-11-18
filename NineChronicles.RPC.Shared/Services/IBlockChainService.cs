@@ -16,5 +16,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<bool> SetAddressesToSubscribe(IEnumerable<byte[]> addressesBytes);
 
         UnaryResult<bool> IsTransactionStaged(byte[] txidBytes);
+
+        UnaryResult<bool> PutException(string code, string message);
     }
 }
