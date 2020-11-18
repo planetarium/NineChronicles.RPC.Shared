@@ -14,5 +14,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes);
 
         UnaryResult<bool> SetAddressesToSubscribe(IEnumerable<byte[]> addressesBytes);
+
+        UnaryResult<bool> IsTransactionStaged(byte[] txidBytes);
     }
 }
