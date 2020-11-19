@@ -17,6 +17,6 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> IsTransactionStaged(byte[] txidBytes);
 
-        UnaryResult<bool> PutException(string code, string message);
+        UnaryResult<bool> ReportException(string code, string message);
     }
 }
