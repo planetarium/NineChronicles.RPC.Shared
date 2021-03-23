@@ -12,6 +12,8 @@ namespace Nekoyume.Shared.Services
         UnaryResult<byte[]> GetState(byte[] addressBytes);
 
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes);
+        
+        UnaryResult<byte[]> GetTip();
 
         UnaryResult<bool> SetAddressesToSubscribe(IEnumerable<byte[]> addressesBytes);
 
