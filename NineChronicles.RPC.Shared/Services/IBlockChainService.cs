@@ -22,5 +22,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<bool> ReportException(string code, string message);
 
         UnaryResult<bool> AddClient(byte[] addressByte);
+
+        UnaryResult<bool> RemoveClient(byte[] addressByte);
     }
 }
