@@ -5,7 +5,7 @@ namespace Nekoyume.Shared.Hubs
 {
     public interface IActionEvaluationHub : IStreamingHub<IActionEvaluationHub, IActionEvaluationHubReceiver>
     {
-        Task JoinAsync();
+        Task JoinAsync(string addressHex);
 
         Task LeaveAsync();
 

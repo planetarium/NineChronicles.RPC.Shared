@@ -15,10 +15,14 @@ namespace Nekoyume.Shared.Services
         
         UnaryResult<byte[]> GetTip();
 
-        UnaryResult<bool> SetAddressesToSubscribe(IEnumerable<byte[]> addressesBytes);
+        UnaryResult<bool> SetAddressesToSubscribe(byte[] toByteArray, IEnumerable<byte[]> addressesBytes);
 
         UnaryResult<bool> IsTransactionStaged(byte[] txidBytes);
 
         UnaryResult<bool> ReportException(string code, string message);
+
+        UnaryResult<bool> AddClient(byte[] addressByte);
+
+        UnaryResult<bool> RemoveClient(byte[] addressByte);
     }
 }
