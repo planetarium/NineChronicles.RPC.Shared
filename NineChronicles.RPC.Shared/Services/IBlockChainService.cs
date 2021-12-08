@@ -26,5 +26,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
         UnaryResult<Dictionary<byte[], byte[]>> GetState(IEnumerable<byte[]> addressBytesList);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList);
     }
 }
