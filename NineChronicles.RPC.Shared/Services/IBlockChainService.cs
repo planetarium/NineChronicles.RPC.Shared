@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MagicOnion;
 
 namespace Nekoyume.Shared.Services
@@ -25,8 +26,8 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList);
+        Task<UnaryResult<Dictionary<byte[], byte[]>>> GetAvatarStates(IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList);
+        Task<UnaryResult<Dictionary<byte[], byte[]>>> GetStateBulk(IEnumerable<byte[]> addressBytesList);
     }
 }
