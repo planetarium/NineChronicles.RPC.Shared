@@ -9,7 +9,7 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<long> GetNextTxNonce(byte[] addressBytes);
 
-        UnaryResult<byte[]> GetState(byte[] addressBytes);
+        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
 
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes);
         
