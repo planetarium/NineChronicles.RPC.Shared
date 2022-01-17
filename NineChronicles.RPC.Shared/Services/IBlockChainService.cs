@@ -11,7 +11,7 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
 
-        UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes);
+        UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] blockHashBytes);
         
         UnaryResult<byte[]> GetTip();
 
@@ -25,8 +25,8 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList);
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
     }
 }
