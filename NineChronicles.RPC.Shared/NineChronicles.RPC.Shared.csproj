@@ -7,13 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MagicOnion.Abstractions" Version="4.3.1" />
-    <PackageReference Include="MagicOnion.MSBuild.Tasks" Version="4.3.1" PrivateAssets="All" />
-    <PackageReference Include="MagicOnion.Shared" Version="4.3.1" />
+    <PackageReference Include="MagicOnion.Abstractions" Version="5.0.3" />
+    <PackageReference Include="MagicOnion.Shared" Version="5.0.3" />
     <PackageReference Include="MessagePack.MSBuild.Tasks" Version="2.1.80" PrivateAssets="All" />
   </ItemGroup>
-
-  <Target Name="GenerateMagicOnion" AfterTargets="Compile">
-    <MagicOnionGenerator Input=".\NineChronicles.RPC.Shared.csproj" Output="..\Generated\MagicOnion.Generated.cs" />
-  </Target>
 </Project>
