@@ -15,6 +15,8 @@ namespace Nekoyume.Shared.Services
         
         UnaryResult<byte[]> GetTip();
 
+        UnaryResult<byte[]> GetBlockHash(long blockIndex);
+
         UnaryResult<bool> SetAddressesToSubscribe(byte[] toByteArray, IEnumerable<byte[]> addressesBytes);
 
         UnaryResult<bool> IsTransactionStaged(byte[] txidBytes);
