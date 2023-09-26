@@ -9,7 +9,7 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<long> GetNextTxNonce(byte[] addressBytes);
 
-        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
+        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] accountBytes, byte[] blockHashBytes);
 
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] blockHashBytes);
         
@@ -27,8 +27,8 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] accountBytes, byte[] blockHashBytes);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] accountBytes, byte[] blockHashBytes);
     }
 }
