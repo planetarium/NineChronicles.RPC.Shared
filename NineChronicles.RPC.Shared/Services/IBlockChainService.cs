@@ -10,9 +10,13 @@ namespace Nekoyume.Shared.Services
         UnaryResult<long> GetNextTxNonce(byte[] addressBytes);
 
         UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
+        
+        UnaryResult<byte[]> GetStateBySrh(byte[] addressBytes, byte[] stateRootHashBytes);
 
         UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] blockHashBytes);
         
+        UnaryResult<byte[]> GetBalanceBySrh(byte[] addressBytes, byte[] currencyBytes, byte[] stateRootHashBytes);
+
         UnaryResult<byte[]> GetTip();
 
         UnaryResult<byte[]> GetBlockHash(long blockIndex);
@@ -29,6 +33,10 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
 
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+
         UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
     }
 }
