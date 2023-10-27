@@ -9,13 +9,17 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<long> GetNextTxNonce(byte[] addressBytes);
 
-        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
-        
-        UnaryResult<byte[]> GetStateBySrh(byte[] addressBytes, byte[] stateRootHashBytes);
+        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] accountBytes, byte[] blockHashBytes);
 
-        UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] blockHashBytes);
+        UnaryResult<byte[]> GetStateByWorldSrh(byte[] addressBytes, byte[] accountBytes, byte[] worldStateRootHashBytes);
+
+        UnaryResult<byte[]> GetStateByAccountSrh(byte[] addressBytes, byte[] accountStateRootHashBytes);
         
-        UnaryResult<byte[]> GetBalanceBySrh(byte[] addressBytes, byte[] currencyBytes, byte[] stateRootHashBytes);
+        UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] accountBytes, byte[] blockHashBytes);
+
+        UnaryResult<byte[]> GetBalanceByWorldSrh(byte[] addressBytes, byte[] currencyBytes, byte[] accountBytes, byte[] worldStateRootHashBytes);
+
+        UnaryResult<byte[]> GetBalanceByAccountSrh(byte[] addressBytes, byte[] currencyBytes, byte[] accountStateRootHashBytes);
 
         UnaryResult<byte[]> GetTip();
 
@@ -33,10 +37,12 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesByWorldSrh(IEnumerable<byte[]> addressBytesList, byte[] worldStateRootHashBytes);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] accountBytes, byte[] blockHashBytes);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkByWorldSrh(IEnumerable<byte[]> addressBytesList, byte[] accountBytes, byte[] worldStateRootHashBytes);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkByAccountSrh(IEnumerable<byte[]> addressBytesList, byte[] accountStateRootHashBytes);
     }
 }
