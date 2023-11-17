@@ -38,5 +38,7 @@ namespace Nekoyume.Shared.Services
         UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
 
         UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetSheets(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
     }
 }
