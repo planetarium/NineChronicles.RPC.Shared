@@ -16,10 +16,10 @@ namespace Nekoyume.Shared.Services
             byte[] stateRootHashBytes, byte[] accountAddressBytes, byte[] addressBytes);
 
         UnaryResult<byte[]> GetBalanceByBlockHash(
-            byte[] blockHashBytes, byte[] accountAddressBytes, byte[] addressBytes, byte[] currencyBytes);
+            byte[] blockHashBytes, byte[] addressBytes, byte[] currencyBytes);
 
         UnaryResult<byte[]> GetBalanceByStateRootHash(
-            byte[] stateRootHashBytes, byte[] accountAddressBytes, byte[] addressBytes, byte[] currencyBytes);
+            byte[] stateRootHashBytes, byte[] addressBytes, byte[] currencyBytes);
 
         UnaryResult<byte[]> GetTip();
 
@@ -34,6 +34,12 @@ namespace Nekoyume.Shared.Services
         UnaryResult<bool> AddClient(byte[] addressByte);
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetAgentStatesByBlockHash(
+            byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetAgentStatesByStateRootHash(
+            byte[] stateRootHashBytes, IEnumerable<byte[]> addressBytesList);
 
         UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesByBlockHash(
             byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
