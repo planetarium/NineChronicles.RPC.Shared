@@ -35,9 +35,11 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
-        UnaryResult<byte[]> GetAgentStateByBlockHash(byte[] blockHashBytes, byte[] addressBytes);
+        UnaryResult<byte[]> GetAgentStatesByBlockHash(
+            byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<byte[]> GetAgentStateByStateRootHash(byte[] stateRootHashBytes, byte[] addressBytes);
+        UnaryResult<byte[]> GetAgentStatesByStateRootHash(
+            byte[] stateRootHashBytes, IEnumerable<byte[]> addressBytesList);
 
         UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesByBlockHash(
             byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
