@@ -9,13 +9,17 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<long> GetNextTxNonce(byte[] addressBytes);
 
-        UnaryResult<byte[]> GetState(byte[] addressBytes, byte[] blockHashBytes);
-        
-        UnaryResult<byte[]> GetStateBySrh(byte[] addressBytes, byte[] stateRootHashBytes);
+        UnaryResult<byte[]> GetStateByBlockHash(
+            byte[] blockHashBytes, byte[] accountAddressBytes, byte[] addressBytes);
 
-        UnaryResult<byte[]> GetBalance(byte[] addressBytes, byte[] currencyBytes, byte[] blockHashBytes);
-        
-        UnaryResult<byte[]> GetBalanceBySrh(byte[] addressBytes, byte[] currencyBytes, byte[] stateRootHashBytes);
+        UnaryResult<byte[]> GetStateByStateRootHash(
+            byte[] stateRootHashBytes, byte[] accountAddressBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetBalanceByBlockHash(
+            byte[] blockHashBytes, byte[] addressBytes, byte[] currencyBytes);
+
+        UnaryResult<byte[]> GetBalanceByStateRootHash(
+            byte[] stateRootHashBytes, byte[] addressBytes, byte[] currencyBytes);
 
         UnaryResult<byte[]> GetTip();
 
@@ -31,14 +35,24 @@ namespace Nekoyume.Shared.Services
 
         UnaryResult<bool> RemoveClient(byte[] addressByte);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStates(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAgentStatesByBlockHash(
+            byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAgentStatesByStateRootHash(
+            byte[] stateRootHashBytes, IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulk(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesByBlockHash(
+            byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetStateBulkBySrh(IEnumerable<byte[]> addressBytesList, byte[] stateRootHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetAvatarStatesByStateRootHash(
+            byte[] stateRootHashBytes, IEnumerable<byte[]> addressBytesList);
 
-        UnaryResult<Dictionary<byte[], byte[]>> GetSheets(IEnumerable<byte[]> addressBytesList, byte[] blockHashBytes);
+        UnaryResult<Dictionary<byte[], byte[]>> GetBulkStateByBlockHash(
+            byte[] blockHashBytes, byte[] accountAddressBytes, IEnumerable<byte[]> addressBytesList);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetBulkStateByStateRootHash(
+            byte[] stateRootHashBytes, byte[] accountAddressBytes, IEnumerable<byte[]> addressBytesList);
+
+        UnaryResult<Dictionary<byte[], byte[]>> GetSheets(byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
     }
 }
