@@ -21,6 +21,18 @@ namespace Nekoyume.Shared.Services
         UnaryResult<byte[]> GetBalanceByStateRootHash(
             byte[] stateRootHashBytes, byte[] addressBytes, byte[] currencyBytes);
 
+        UnaryResult<byte[]> GetUnbondClaimableHeightByBlockHash(
+            byte[] blockHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetUnbondClaimableHeightByStateRootHash(
+            byte[] stateRootHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetClaimableRewardsByBlockHash(
+            byte[] blockHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetClaimableRewardsByStateRootHash(
+            byte[] stateRootHashBytes, byte[] addressBytes);
+
         UnaryResult<byte[]> GetTip();
 
         UnaryResult<byte[]> GetBlockHash(long blockIndex);
