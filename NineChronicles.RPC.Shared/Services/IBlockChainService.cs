@@ -33,6 +33,18 @@ namespace Nekoyume.Shared.Services
         UnaryResult<byte[]> GetClaimableRewardsByStateRootHash(
             byte[] stateRootHashBytes, byte[] addressBytes);
 
+        UnaryResult<byte[]> GetDelegationInfoByBlockHash(
+            byte[] blockHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetDelegationInfoByStateRootHash(
+            byte[] stateRootHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetStakedByBlockHash(
+            byte[] blockHashBytes, byte[] addressBytes);
+
+        UnaryResult<byte[]> GetStakedByStateRootHash(
+            byte[] stateRootHashBytes, byte[] addressBytes);
+
         UnaryResult<byte[]> GetTip();
 
         UnaryResult<byte[]> GetBlockHash(long blockIndex);
