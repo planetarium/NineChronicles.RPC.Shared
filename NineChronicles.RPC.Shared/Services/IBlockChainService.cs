@@ -66,5 +66,7 @@ namespace Nekoyume.Shared.Services
             byte[] stateRootHashBytes, byte[] accountAddressBytes, IEnumerable<byte[]> addressBytesList);
 
         UnaryResult<Dictionary<byte[], byte[]>> GetSheets(byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
+        
+        UnaryResult<Dictionary<byte[], byte[]>> GetSheetsHash(byte[] blockHashBytes, IEnumerable<byte[]> addressBytesList);
     }
 }
